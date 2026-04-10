@@ -1,0 +1,14 @@
+<main class="aggregator-container">
+  <header class="app-header">
+    <h1 class="logo">OmniNexus</h1>
+    <p class="tagline">Unified Social Intelligence</p>
+  </header>
+
+  <section class="feed">
+    @for (post of posts(); track post.id) {
+      <div class="post-wrapper">
+        <lib-omni-post-card [post]="post" />
+      </div>
+    }
+  </section>
+</main>

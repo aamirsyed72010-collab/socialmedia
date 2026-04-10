@@ -1,0 +1,19 @@
+{
+  "name": "normalizers",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/normalizers/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/normalizers",
+        "main": "libs/shared/normalizers/src/index.ts",
+        "tsConfig": "libs/shared/normalizers/tsconfig.lib.json",
+        "assets": ["libs/shared/normalizers/*.md"]
+      }
+    }
+  }
+}

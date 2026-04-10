@@ -1,0 +1,47 @@
+<div class="card" [ngClass]="platformClass()">
+  <div class="header">
+    <div class="author-info">
+      <img [src]="post().author.avatarUrl || 'assets/default-avatar.png'" class="avatar" alt="Avatar">
+      <div class="names">
+        <span class="display-name">{{ post().author.displayName }}</span>
+        <span class="handle">@{{ post().author.handle }}</span>
+      </div>
+    </div>
+    <div class="platform-badge">
+      {{ post().platform }}
+    </div>
+  </div>
+
+  <div class="content">
+    <p class="text">{{ post().content.text }}</p>
+    @if ((post().content.mediaUrls || []).length > 0) {
+      <div class="media-grid">
+        @for (url of post().content.mediaUrls; track url) {
+          <img [src]="url" class="media-item" alt="Post attachment">
+        }
+      </div>
+    }
+    @if (post().content.aiSummary) {
+        <div class="ai-summary">
+            <strong>AI Summary:</strong> {{ post().content.aiSummary }}
+        </div>
+    }
+  </div>
+
+  <div class="footer">
+    <div class="metrics">
+      @if (post().metrics.likes !== undefined) {
+        <span class="metric"><i class="icon-heart"></i> {{ post().metrics.likes }}</span>
+      }
+      @if (post().metrics.comments !== undefined) {
+        <span class="metric"><i class="icon-comment"></i> {{ post().metrics.comments }}</span>
+      }
+      @if (post().metrics.shares !== undefined) {
+        <span class="metric"><i class="icon-share"></i> {{ post().metrics.shares }}</span>
+      }
+    </div>
+    <div class="timestamp">
+      {{ formattedDate() }}
+    </div>
+  </div>
+</div>

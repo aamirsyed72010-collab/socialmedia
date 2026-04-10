@@ -1,0 +1,47 @@
+// Modern Minimalist Design Tokens
+
+:root {
+  /* Colors - HSL based for easy manipulation */
+  --primary: hsl(230, 85%, 60%);
+  --primary-low: hsl(230, 85%, 60%, 0.1);
+  
+  --bg-main: hsl(0, 0%, 100%);
+  --bg-sub: hsl(210, 20%, 98%);
+  
+  --text-main: hsl(210, 20%, 15%);
+  --text-sub: hsl(210, 10%, 45%);
+  --text-muted: hsl(210, 10%, 65%);
+  
+  /* Glassmorphism Surface Base */
+  --glass-bg: hsla(0, 0%, 100%, 0.4);
+  --glass-border: hsla(210, 20%, 90%, 0.5);
+  --glass-blur: 16px;
+  
+  /* Typography - Variable weights */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --weight-thin: 300;
+  --weight-reg: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --bg-main: hsl(220, 30%, 5%);
+  --bg-sub: hsl(220, 25%, 8%);
+  
+  --text-main: hsl(0, 0%, 95%);
+  --text-sub: hsl(210, 10%, 75%);
+  --text-muted: hsl(210, 10%, 55%);
+  
+  --glass-bg: hsla(220, 30%, 10%, 0.4);
+  --glass-border: hsla(220, 30%, 20%, 0.5);
+}

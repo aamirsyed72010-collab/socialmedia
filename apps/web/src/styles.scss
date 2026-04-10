@@ -1,0 +1,24 @@
+/* Global Styles */
+@use "libs/shared/ui-kit/src/lib/styles/tokens.scss" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-main);
+  background-attachment: fixed;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(230, 85%, 60%, 0.15) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(280, 85%, 60%, 0.1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(200, 85%, 60%, 0.1) 0, transparent 50%);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-weight: var(--weight-bold);
+}

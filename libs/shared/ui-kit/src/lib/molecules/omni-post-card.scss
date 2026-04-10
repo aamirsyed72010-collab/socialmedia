@@ -1,0 +1,128 @@
+@use '../styles/tokens.scss' as *;
+
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  color: var(--text-main);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px hsla(0, 0%, 0%, 0.1);
+    border-color: hsla(230, 85%, 60%, 0.3);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      border: 2px solid var(--glass-border);
+    }
+
+    .names {
+      display: flex;
+      flex-direction: column;
+
+      .display-name {
+        font-weight: var(--weight-bold);
+        font-size: 1.1rem;
+      }
+
+      .handle {
+        color: var(--text-sub);
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .platform-badge {
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    background: var(--primary-low);
+    color: var(--primary);
+  }
+}
+
+.content {
+  .text {
+    line-height: 1.6;
+    white-space: pre-wrap;
+    font-size: 1rem;
+  }
+
+  .media-grid {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    .media-item {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+
+  .ai-summary {
+    margin-top: 16px;
+    padding: 12px;
+    background: hsla(160, 80%, 40%, 0.1);
+    border-left: 4px solid hsl(160, 80%, 40%);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--text-main);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 16px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+
+  .metrics {
+    display: flex;
+    gap: 16px;
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}
+
+/* Platform specific accents */
+.platform-x { border-left: 4px solid #000; }
+.platform-reddit { border-left: 4px solid #FF4500; }
+.platform-instagram { border-left: 4px solid #E1306C; }
+.platform-discord { border-left: 4px solid #5865F2; }
