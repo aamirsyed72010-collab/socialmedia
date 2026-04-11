@@ -12,11 +12,12 @@
         "platform": "node",
         "outputPath": "dist/apps/firebase-backend",
         "format": ["cjs"],
-        "bundle": false,
+        "generatePackageJson": true,
+        "bundle": true,
+        "thirdParty": true,
         "main": "apps/firebase-backend/src/main.ts",
         "tsConfig": "apps/firebase-backend/tsconfig.app.json",
         "assets": ["apps/firebase-backend/src/assets"],
-        "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {

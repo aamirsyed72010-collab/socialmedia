@@ -1,1 +1,1 @@
-export * from './lib/OmniPost';
+export * from './lib/NektNode';

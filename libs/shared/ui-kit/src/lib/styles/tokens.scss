@@ -1,47 +1,53 @@
-// Modern Minimalist Design Tokens
+// Unified Social OS: Obsidian / Signal White Tokens
 
 :root {
-  /* Colors - HSL based for easy manipulation */
-  --primary: hsl(230, 85%, 60%);
-  --primary-low: hsl(230, 85%, 60%, 0.1);
+  /* Core Palette */
+  --obsidian: #000000;
+  --signal-white: #FFFFFF;
+  --signal-gray: #1A1A1A; // Surface elevation
   
-  --bg-main: hsl(0, 0%, 100%);
-  --bg-sub: hsl(210, 20%, 98%);
+  /* Intent Colors (Minimalist Geometric Accents) */
+  --communal-accent: #3b82f6; // Circle
+  --visuals-accent: #ef4444;  // Square
+  --synapse-accent: #10b981;  // Triangle
+
+  /* Theming - High Contrast Minimalist */
+  --bg-main: var(--obsidian);
+  --bg-sub: var(--signal-gray);
   
-  --text-main: hsl(210, 20%, 15%);
-  --text-sub: hsl(210, 10%, 45%);
-  --text-muted: hsl(210, 10%, 65%);
+  --text-main: var(--signal-white);
+  --text-sub: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.4);
   
-  /* Glassmorphism Surface Base */
-  --glass-bg: hsla(0, 0%, 100%, 0.4);
-  --glass-border: hsla(210, 20%, 90%, 0.5);
-  --glass-blur: 16px;
+  /* Glassmorphism - Adaptive Surface */
+  --glass-bg: rgba(26, 26, 26, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 24px;
   
-  /* Typography - Variable weights */
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  --weight-thin: 300;
+  /* Typography - Inter Variable */
+  --font-main: 'Inter', system-ui, sans-serif;
+  --weight-thin: 100;
   --weight-reg: 400;
   --weight-medium: 500;
-  --weight-bold: 700;
+  --weight-bold: 900;
   
-  /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  /* Radii - Minimal (Geometric) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   --radius-full: 9999px;
 
   /* Transitions */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-geometric: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-[data-theme='dark'] {
-  --bg-main: hsl(220, 30%, 5%);
-  --bg-sub: hsl(220, 25%, 8%);
-  
-  --text-main: hsl(0, 0%, 95%);
-  --text-sub: hsl(210, 10%, 75%);
-  --text-muted: hsl(210, 10%, 55%);
-  
-  --glass-bg: hsla(220, 30%, 10%, 0.4);
-  --glass-border: hsla(220, 30%, 20%, 0.5);
+// Light mode fallback (Signal White background)
+[data-theme='light'] {
+  --bg-main: var(--signal-white);
+  --bg-sub: #F5F5F5;
+  --text-main: var(--obsidian);
+  --text-sub: rgba(0, 0, 0, 0.7);
+  --text-muted: rgba(0, 0, 0, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }

@@ -1,7 +1,7 @@
-import { normalizers } from './normalizers';
+import { normalizeToNekt } from './normalizers';
 
 describe('normalizers', () => {
-  it('should work', () => {
-    expect(normalizers()).toEqual('normalizers');
+  it('should exist', () => {
+    expect(normalizeToNekt).toBeDefined();
   });
 });

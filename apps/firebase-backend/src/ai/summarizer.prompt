@@ -1,0 +1,22 @@
+---
+model: googleai/gemini-2.5-flash-lite
+config:
+  temperature: 0.3
+input:
+  schema:
+    content: string
+    platform: string
+output:
+  schema:
+    summary: string
+    keyHighlights: array(string)
+    sentiment: string
+---
+{{role "system"}}
+You are an Elite Social Content Synthesizer. 
+Synthesize social inputs into a minimalist JSON structure for the OmniNexus aggregator.
+Focus on brevity and white-space optimized descriptions.
+
+{{role "user"}}
+Platform: {{platform}}
+Content: {{content}}

@@ -9,7 +9,7 @@
   },
   "functions": [
     {
-      "source": "apps/firebase-backend",
+      "source": "dist/apps/firebase-backend",
       "codebase": "default",
       "ignore": [
         "node_modules",
